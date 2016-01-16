@@ -1,0 +1,65 @@
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ */
+'use strict';
+
+var React = require('react-native');
+
+var {
+  View,
+  Text,
+  TextInput,
+  StyleSheet,
+  AppRegistry
+} = React;
+
+
+var First = React.createClass({
+  
+  getInitialState: function(){
+    return {
+      input: '',
+      output: ''
+    };
+  },
+
+  showMeaning: function(){
+    var meaning = this.state.input;
+    this.setState({ output: meaning });
+  },
+
+  render: function() {
+    return (
+      <View style = { styles.parent } >
+          <Text>Type something in English:</Text>
+          <TextInput text={ this.state.input } 
+                      onChangeText={(e) => this.setState({ input: e })} 
+                      onSubmitEditing = { this.showMeaning } />
+          <Text style = { styles.germanLabel } >Its German equivalent is:</Text>
+          <Text style = { styles.germanWord } >
+            { this.state.output }
+          </Text>
+      </View>
+    );
+  }
+});
+
+var styles = StyleSheet.create({
+  parent: {
+    padding: 16
+  },
+  germanWord: {
+    marginTop: 15,
+    fontWeight: 'bold',
+    fontSize: 30,
+    fontStyle: 'italic'
+  },
+  germanLabel: {
+    marginTop: 20,
+    fontWeight: 'bold'
+  }
+});
+
+
+AppRegistry.registerComponent('First', () => First);
