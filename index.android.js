@@ -14,6 +14,16 @@ var {
   AppRegistry
 } = React;
 
+var EMPLOYEE_DATA = [
+                      { name: 'Deepak Dargade', mobile: '9619306161', posters: { thumbnail: 'https://www.classpro.in/team/deepak-dargade.jpg'}},
+                      { name: 'Jayesh Gopalan', mobile: '9768002930', posters: { thumbnail: 'https://www.classpro.in/team/jayesh-gopalan.png'}},
+                      { name: 'Vijay Suryanwanshi', mobile: '8286012930', posters: { thumbnail: 'https://www.classpro.in/team/vijay.jpg'}},
+                      { name: 'Faraz Damad', mobile: '9702377032', posters: { thumbnail: 'https://www.classpro.in/team/faraz.jpg'}},
+                      { name: 'Sameer Shaikh', mobile: '9702377032', posters: { thumbnail: 'https://www.classpro.in/team/sameer-shaikh.jpg'}},
+                      { name: 'Priti Phatak', mobile: '9702377032', posters: { thumbnail: 'https://www.classpro.in/team/priti-phatak.jpg'}},
+                      { name: 'Prakriti Sharma', mobile: '9702377032', posters: { thumbnail: 'https://www.classpro.in/team/prakriti-sharma.jpg'}},
+                      { name: 'Sonal Kode', mobile: '9702377032', posters: { thumbnail: 'https://www.classpro.in/team/sonal-kode.png'}}
+                    ];
 
 var First = React.createClass({
   openDrawer:function() {
@@ -21,6 +31,7 @@ var First = React.createClass({
   },
 
   render: function() {
+    
     var navigationView = (
         <View style={styles.nav_view}>
 
@@ -46,6 +57,9 @@ var First = React.createClass({
 
         </View>
     );
+
+    var employee = EMPLOYEE_DATA[0];
+
     return (
       <DrawerLayoutAndroid
         drawerWidth={300}
@@ -63,153 +77,20 @@ var First = React.createClass({
             Schedule
           </Text>
         </View>
+
         <ScrollView>
+          
           <View style={styles.row}>
             <Image
-              source={{uri: 'https://www.classpro.in/team/deepak-dargade.jpg'}}
+              source={{uri: employee.posters.thumbnail}}
               style={styles.image}
             />
             <View style={styles.text}>
               <Text style={styles.title}>
-                Deepak Dargade
+                {employee.name}
               </Text>
               <Text style={styles.subtitle}>
-                9619306161
-              </Text>
-            </View>
-          </View>
-
-          <View style={styles.row}>
-            <Image
-              source={{uri: 'https://www.classpro.in/team/jayesh-gopalan.png'}}
-              style={styles.image}
-            />
-            <View style={styles.text}>
-              <Text style={styles.title}>
-                Jayesh Gopalan
-              </Text>
-              <Text style={styles.subtitle}>
-                9768002930
-              </Text>
-            </View>
-          </View>
-
-          <View style={styles.row}>
-            <Image
-              source={{uri: 'https://www.classpro.in/team/vijay.jpg'}}
-              style={styles.image}
-            />
-            <View style={styles.text}>
-              <Text style={styles.title}>
-                Vijay Suryanwanshi
-              </Text>
-              <Text style={styles.subtitle}>
-                8286012930
-              </Text>
-            </View>
-          </View>
-
-          <View style={styles.row}>
-            <Image
-              source={{uri: 'https://www.classpro.in/team/faraz.jpg'}}
-              style={styles.image}
-            />
-            <View style={styles.text}>
-              <Text style={styles.title}>
-                Faraz Damad
-              </Text>
-              <Text style={styles.subtitle}>
-                8286012930
-              </Text>
-            </View>
-          </View>
-
-          <View style={styles.row}>
-            <Image
-              source={{uri: 'https://www.classpro.in/team/sameer-shaikh.jpg'}}
-              style={styles.image}
-            />
-            <View style={styles.text}>
-              <Text style={styles.title}>
-                Sameer Shaikh
-              </Text>
-              <Text style={styles.subtitle}>
-                8286012930
-              </Text>
-            </View>
-          </View>
-
-          <View style={styles.row}>
-            <Image
-              source={{uri: 'https://www.classpro.in/team/priti-phatak.jpg'}}
-              style={styles.image}
-            />
-            <View style={styles.text}>
-              <Text style={styles.title}>
-                Priti Phatak
-              </Text>
-              <Text style={styles.subtitle}>
-                8286012930
-              </Text>
-            </View>
-          </View>
-
-          <View style={styles.row}>
-            <Image
-              source={{uri: 'https://www.classpro.in/team/prakriti-sharma.jpg'}}
-              style={styles.image}
-            />
-            <View style={styles.text}>
-              <Text style={styles.title}>
-                Prakriti Sharma
-              </Text>
-              <Text style={styles.subtitle}>
-                8286012930
-              </Text>
-            </View>
-          </View>
-
-          <View style={styles.row}>
-            <Image
-              source={{uri: 'https://www.classpro.in/team/prakriti-sharma.jpg'}}
-              style={styles.image}
-            />
-            <View style={styles.text}>
-              <Text style={styles.title}>
-                Prakriti Sharma
-              </Text>
-              <Text style={styles.subtitle}>
-                8286012930
-              </Text>
-            </View>
-          </View>
-
-          <View style={styles.row}>
-            <Image
-              source={{uri: 'https://www.classpro.in/team/prakriti-sharma.jpg'}}
-              style={styles.image}
-            />
-            <View style={styles.text}>
-              <Text style={styles.title}>
-                Prakriti Sharma
-              </Text>
-              <Text style={styles.subtitle}>
-                8286012930
-              </Text>
-            </View>
-          </View>
-
-          <View style={styles.row}>
-            <Image
-              source={{uri: 'https://www.classpro.in/team/prakriti-sharma.jpg'}}
-              style={styles.image}
-            />
-            <View style={styles.text}>
-              <Text style={styles.title}>
-                Prakriti Sharma
-              </Text>
-              <Text style={styles.subtitle}>
-                8286012930
+                {employee.mobile}
               </Text>
             </View>
           </View>
